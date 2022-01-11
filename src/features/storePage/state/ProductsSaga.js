@@ -16,6 +16,14 @@ function* fetchProductsHandler() {
   }
 }
 
+function* fetchCategoriesHandler() {
+  try {
+    const allCategories = yield call(fetchData(categories));
+    yield put()
+  }
+}
+
 export function* watchProducts() {
+  yield takeLatest(fetchAllProducts.type, fetchCategoriesHandler)
   yield takeLatest(fetchAllProducts.type, fetchProductsHandler);
 }
