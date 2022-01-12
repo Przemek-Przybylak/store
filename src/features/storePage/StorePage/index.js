@@ -7,16 +7,14 @@ import { fetchAllProducts, selectAllProducts } from "../state/ProductsSlice";
 export const StorePage = () => {
   const dispatch = useDispatch();
   const allProducts = useSelector(selectAllProducts);
-  const allCategories = useSelector();
 
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, [dispatch]);
-  console.log(allProducts);
   return (
     <>
-      <Header />
-      <ProductsTiles />
+      <Header categories={allCategories} />
+      <ProductsTiles products={products} />
     </>
   );
 };
