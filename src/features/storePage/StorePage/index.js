@@ -2,19 +2,19 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ProductsTiles } from "../../../common/products/ProductsTiles";
 import { Header } from "../../header/header/Header";
-import { fetchAllProducts, selectAllProducts } from "../state/ProductsSlice";
+import { actions, selectors } from "../state/ProductsSlice";
 
 export const StorePage = () => {
   const dispatch = useDispatch();
-  const allProducts = useSelector(selectAllProducts);
+  const allProducts = useSelector(selectors.selectDetails);
 
   useEffect(() => {
-    dispatch(fetchAllProducts());
+    dispatch(actions.fetch("products"));
   }, [dispatch]);
   return (
     <>
-      <Header categories={allCategories} />
-      <ProductsTiles products={products} />
+      <Header />
+      <ProductsTiles products={allProducts} />
     </>
   );
 };
