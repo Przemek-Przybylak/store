@@ -13,7 +13,7 @@ export const generatorSlice = ({ name }) => {
         status: "loading",
       }),
       fetchSuccess: (_, { payload }) => ({
-        details: payload,
+        products: payload,
         status: "success",
       }),
       fetchError: () => ({
@@ -27,7 +27,7 @@ export const generatorSlice = ({ name }) => {
     reducer: slice.reducer,
     actions: slice.actions,
     selectors: {
-      selectDetails: (state) => state[name].details,
+      selectProducts: (state) => state[name].products,
       selectStatus: (state) => state[name].status,
     },
   };
