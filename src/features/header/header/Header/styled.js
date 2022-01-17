@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "../svg/Logo.svg";
 export const Wrapper = styled.header`
   padding: 0 30px;
   margin: 0;
-  height: 60px;
+  height: 40px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   display: flex;
   align-items: center;
@@ -16,11 +16,14 @@ export const NavigationList = styled.ul`
   align-items: center;
   gap: 0 30px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 `;
 
 export const NavigationItem = styled.li``;
 
 export const CompanyLogo = styled(Logo)`
-  width: 38px;
-  height: 38px;
+  width: 20px;
+  height: 20px;
+  margin-right: 50px;
 `;
