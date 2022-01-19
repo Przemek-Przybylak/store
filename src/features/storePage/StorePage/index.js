@@ -8,9 +8,6 @@ import { actions, selectors } from "../state/ProductsSlice";
 export const StorePage = () => {
   const dispatch = useDispatch();
   const allProducts = useSelector(selectors.selectProducts);
-  const selectStatus = useSelector(selectors.selectStatus);
-
-  console.log(selectStatus);
 
   useEffect(() => {
     dispatch(actions.fetch("products"));
