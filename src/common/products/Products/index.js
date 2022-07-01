@@ -1,18 +1,16 @@
-export const Products = ({ allProducts }) => {
-  console.log("prpdu");
+import { Image, Product, Wrapper } from "./styled";
 
+export const Products = ({ allProducts }) => {
   console.log(allProducts);
   return (
     <>
-      <section>
-        {allProducts.map(({ id, title, price }) => (
-          <article key={id}>
-            <span>{id}</span>
-            <p>{title}</p>
-            <span>{price}</span>
-          </article>
+      <Wrapper>
+        {allProducts.map(({ image }) => (
+          <Product>
+            <Image src={image} />
+          </Product>
         ))}
-      </section>
+      </Wrapper>
     </>
   );
 };
