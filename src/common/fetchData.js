@@ -1,12 +1,6 @@
-export const fetchData = async (path) => {
-  const response = await fetch(`https://fakestoreapi.com/${path}`);
-  console.log(response);
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  return await response.json();
-};
+import axios from "axios";
 
-export const fetchProducts = async () => {
-  return await fetchData(`https://fakestoreapi.com/products/`);
-};
+const fetchData = axios.create({
+  baseURL: `https://fakestoreapi.com/`,
+});
+export default fetchData;
