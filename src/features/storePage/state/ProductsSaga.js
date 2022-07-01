@@ -1,10 +1,10 @@
 import { listSaga } from "../../../common/generatorSaga";
 import { actions } from "./ProductsSlice";
-import { fetchData } from "../../../common/fetchData";
+import { fetchAllProducts } from "../productsList/fetchProductsList";
 
 export function* watchFetchProducts() {
   yield listSaga({
     actions,
-    fetchData,
+    fetchAllProducts,
   });
 }
